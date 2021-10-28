@@ -82,16 +82,20 @@ def Detect_plate(image):
 
 
 	# Drawing the selected contour on the original image
-	cv2.drawContours(image, [NumberPlateCnt], -1, (0,255,0), 3)
-	cv2.imshow("Final Image with Number Plate Detected", image)
-	cv2.imwrite(save_dir + '/final' + '.png', image) #writing final image with number plate
-	cv2.waitKey(0)
+	# cv2.drawContours(image, [NumberPlateCnt], -1, (0,255,0), 3)
+	# cv2.imshow("Final Image with Number Plate Detected", image)
+	# cv2.imwrite(save_dir + '/final' + '.png', image) #writing final image with number plate
+	# cv2.waitKey(0)
 
-	cropped_img_loc = save_dir + "/plate.png"
-	cv2.imshow("cropped Image ", cv2.imread(cropped_img_loc))
-	cv2.waitKey(0) # Wait for user input before closing the image displayed
+	# cropped_img_loc = save_dir + "/plate.png"
+	# cv2.imshow("cropped Image ", cv2.imread(cropped_img_loc))
+	# cv2.waitKey(0) # Wait for user input before closing the image displayed
+    
+	cropped_img='E:/ANPR john/vehicle-number-plate-detection-master/vehicle-number-plate-detection-master/imgs/13 i .png'
+	cv2.imshow('Cropped image',cv2.imread(cropped_img))
+	cv2.waitKey(0)
 	
-	src='E:/ANPR john/vehicle-number-plate-detection-master/vehicle-number-plate-detection-master/Cropped_Image_text/plate.png'
+	src='E:/ANPR john/vehicle-number-plate-detection-master/vehicle-number-plate-detection-master/imgs/13 i .png'
 	des='E:/ANPR john/vehicle-number-plate-detection-master/vehicle-number-plate-detection-master/Recognisied plates/plate.png'
 	shutil.copy(src,des)
 	return save_dir
