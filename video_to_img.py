@@ -2,8 +2,8 @@ import cv2
 import os
 
 
-def frame_creator():
-    vidcap = cv2.VideoCapture('olcar.mp4')
+def frame_creator(vid_file):
+    vidcap = cv2.VideoCapture(vid_file)
     total_frames = vidcap.get(cv2.CAP_PROP_FRAME_COUNT)
     frames_step = total_frames//30
     for i in range(30):
@@ -14,4 +14,3 @@ def frame_creator():
         path=str(os.getcwd())+'/imgs/'+str(i)+'.jpeg'
         cv2.imwrite(path,image)
     vidcap.release()
-frame_creator()

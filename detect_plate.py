@@ -92,7 +92,7 @@ def Detect_plate(image):
 	# cv2.waitKey(0) # Wait for user input before closing the image displayed
     
 	cropped_img='E:/ANPR john/vehicle-number-plate-detection-master/vehicle-number-plate-detection-master/13 i .png'
-	cv2.imshow('Cropped image',cv2.imread(cropped_img))
+	cv2.imshow('6.Cropped image',cv2.imread(cropped_img))
 	cv2.waitKey(0)
 	
 	src='E:/ANPR john/vehicle-number-plate-detection-master/vehicle-number-plate-detection-master/13 i .png'
