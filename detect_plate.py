@@ -3,13 +3,15 @@ import cv2
 import imutils
 import pytesseract
 import os
-
+import shutil
+import time
+import recognize_plate
 
 def Detect_plate(image):
 
 
 	save_dir = os.getcwd() + '/Cropped_Image_text'
-
+    
 	if not os.path.exists(save_dir):
 		os.mkdir(save_dir)
 
@@ -76,7 +78,7 @@ def Detect_plate(image):
 			cv2.imwrite(save_dir + '/plate' + '.png', new_img) # Store new image
 
 			break
-
+    
 
 
 	# Drawing the selected contour on the original image
@@ -88,8 +90,11 @@ def Detect_plate(image):
 	cropped_img_loc = save_dir + "/plate.png"
 	cv2.imshow("cropped Image ", cv2.imread(cropped_img_loc))
 	cv2.waitKey(0) # Wait for user input before closing the image displayed
-
-	return new_img
+	
+	src='E:/ANPR john/vehicle-number-plate-detection-master/vehicle-number-plate-detection-master/Cropped_Image_text/plate.png'
+	des='E:/ANPR john/vehicle-number-plate-detection-master/vehicle-number-plate-detection-master/Recognisied plates/plate.png'
+	shutil.copy(src,des)
+	return save_dir
 
 
 
